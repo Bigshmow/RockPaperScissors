@@ -1,2 +1,2 @@
-# RockPaperScrissors
+# RockPaperScissors
 Basic rps game
