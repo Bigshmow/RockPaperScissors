@@ -31,26 +31,33 @@
 
 
         if ( userguess === "r" || userguess === "p" || userguess === "s") {
-                if (userguess===computerguess){
+          if (userguess===computerguess){
                     ties++;
+                    alert("You Tied!!");
                 }
                 if (userguess == "r" && computerguess=="s") {
                     wins++;
+                    alert("You Win! PC played Scissors!");
                 }
                 if (userguess == "s" && computerguess=="p") {
                     wins++;
+                    alert("You Win! PC played Paper!");
                 }
                 if (userguess == "p" && computerguess=="r") {
                     wins++;
+                    alert("You Win! PC played Rock!");
                 }
                 if (userguess == "r" && computerguess=="p") {
                     losses++;
+                    alert("You Lose Fool!!  PC played Scissors!");
                 }
                 if (userguess == "s" && computerguess=="r") {
                     losses++;
+                    alert("You Lose Fool!! PC played Rock!");
                 }
                 if (userguess == "p" && computerguess=="s") {
                     losses++;
+                    alert("You Lose Fool!! PC played Scissors!");
                 }  
             }
         else {
