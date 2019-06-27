@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>RPS</title>
+</head>
+
+<body>
+    
+  <div id="game">
+    <p>Press r, p, or s to start playing</p>
+  </div>
+<!-- user makes a choice
+        computer makes a choice
+        capture those choices
+        compare choices and determine w, l, t
+        display outcomes -->
+  <script type="text/javascript">
+
+    var options = ["r", "p", "s"];
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+
+    document.onkeyup = function() {
+        var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+
+
+        var computerguess = options[Math.floor(Math.random()*options.length)];
+
+
+        if ( userguess === "r" || userguess === "p" || userguess === "s") {
+                if (userguess===computerguess){
+                    ties++;
+                }
+                if (userguess == "r" && computerguess=="s") {
+                    wins++;
+                }
+                if (userguess == "s" && computerguess=="p") {
+                    wins++;
+                }
+                if (userguess == "p" && computerguess=="r") {
+                    wins++;
+                }
+                if (userguess == "r" && computerguess=="p") {
+                    losses++;
+                }
+                if (userguess == "s" && computerguess=="r") {
+                    losses++;
+                }
+                if (userguess == "p" && computerguess=="s") {
+                    losses++;
+                }  
+            }
+        else {
+                alert("Please choose r, p, or s");
+            }
+
+            var html = "<p>Press r, p, or s to start playing</p>" +
+            "<p>wins: " + wins + "</p>" +
+            "<p>losses: " + losses + "</p>" +
+            "<p>ties: " + ties + "</p>";
+
+            document.querySelector('#game').innerHTML = html;
+            
+    }
+
+  </script>
+
+</body>
+
+</html>
